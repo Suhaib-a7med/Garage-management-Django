@@ -1,0 +1,365 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>American star - spare </title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/logo-1.png" />
+    <link rel="stylesheet" href="assets/css/plugins/slider-range.css" />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
+                            <div class="detail-gallery">
+                                <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+                                <div class="product-image-slider">
+                                    <figure class="border-radius-10">
+                                        <img src="{% static 'assets/imgs/shop/product-16-2.jpg' %}" alt="product image" />
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="{% static 'assets/imgs/shop/product-16-1.jpg' %}" alt="product image" />
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="{% static 'assets/imgs/shop/product-16-3.jpg' %}" alt="product image" />
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="{% static 'assets/imgs/shop/product-16-4.jpg' %}" alt="product image" />
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="{% static 'assets/imgs/shop/product-16-5.jpg' %}" alt="product image" />
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="{% static 'assets/imgs/shop/product-16-6.jpg' %}" alt="product image" />
+                                    </figure>
+                                    <figure class="border-radius-10">
+                                        <img src="{% static 'assets/imgs/shop/product-16-7.jpg' %}" alt="product image" />
+                                    </figure>
+                                </div>
+                                <div class="slider-nav-thumbnails">
+                                    <div><img src="{% static 'assets/imgs/shop/thumbnail-3.jpg' %}" alt="product image" /></div>
+                                    <div><img src="{% static 'assets/imgs/shop/thumbnail-4.jpg' %}" alt="product image" /></div>
+                                    <div><img src="{% static 'assets/imgs/shop/thumbnail-5.jpg' %}" alt="product image" /></div>
+                                    <div><img src="{% static 'assets/imgs/shop/thumbnail-6.jpg' %}" alt="product image" /></div>
+                                    <div><img src="{% static 'assets/imgs/shop/thumbnail-7.jpg' %}" alt="product image" /></div>
+                                    <div><img src="{% static 'assets/imgs/shop/thumbnail-8.jpg' %}" alt="product image" /></div>
+                                    <div><img src="{% static 'assets/imgs/shop/thumbnail-9.jpg' %}" alt="product image" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="detail-info pr-30 pl-30">
+                                <span class="stock-status out-stock">  </span>
+                                <h3 class="title-detail"><a href="#" class="text-heading">american star</a></h3>
+                                </div>
+                                <div class="clearfix product-price-cover">
+                                    <div class="product-price primary-color float-left">
+                                        <span class="current-price text-brand">$38</span>
+                                        <span>
+                                            <span class="save-price font-md color3 ml-15">26% Off</span>
+                                        <span class="old-price font-md ml-15">$52</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="detail-extralink mb-30">
+                                    <div class="detail-qty border radius">
+                                        <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+                                        <span class="qty-val">1</span>
+                                        <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                    </div>
+                                    <div class="product-extra-link2">
+                                        <button type="submit" class="button button-add-to-cart"><i class="fi-rs-shopping-cart"></i>Add to cart</button>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                            <!-- Detail Info -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header-area header-style-1 header-height-2">
+        <div class="mobile-promotion">
+        </div>
+       
+        <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+            <div class="container">
+                <div class="header-wrap">
+                    <div class="logo logo-width-1">
+                        <a href="#"><img src="{% static 'assets/imgs/theme/logo-1.png' %}" alt="logo"style="height: 80px; width: 250px;" /></a>
+                    </div>
+                    <div class="header-right">
+                        <div class="search-style-2">
+                            <form action="{% url 'core:search' %}" method="GET">
+                                <input type="text" placeholder="Search for items..." name="q" />
+                                <button class="material-symbols-outlined" type="submit"><span class="material-symbols-outlined">search</span></button>
+
+                            </form>
+                        </div>
+                        <div class="header-action-right">
+                            <div class="header-action-2">
+                               
+                              
+                                <div class="header-action-icon-2">
+                                    <a href="{% url 'core:wishlist' %}">
+                                        <img class="svgInject" alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-heart.svg' %}" />
+                                        {% if request.user.is_authenticated %}
+                                        <span class="pro-count blue">{{ wishlist.count }}</span>
+                                        {% else %}
+                                        <span class="pro-count blue">0</span>
+                                        {% endif %}
+                                    </a>
+                                    <a href="{% url 'core:wishlist' %}"><span class="lable">Wishlist</span></a>
+                                </div>
+                                <div class="header-action-icon-2">
+                                    <a class="mini-cart-icon" href="{% url 'core:cart' %}">
+                                        <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}" />
+                                        <span class="pro-count blue cart-items-count">{{ request.session.cart_data_obj|length }}</span>
+                                    </a>
+                                    <a href="{% url 'core:cart' %}"><span class="lable">Cart</span></a>
+                                    <div class="cart-dropdown-wrap cart-dropdown-hm2">
+
+                                        <div class="shopping-cart-footer">
+
+                                            <div class="shopping-cart-button">
+                                                <a href="{% url 'core:cart' %}" class="outline">View cart</a>
+                                                <a href="{% url 'core:checkout' %}">Checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header-action-icon-2">
+                                    <a href="{% url 'core:dashboard' %}">
+                                        <img class="svgInject" alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-user.svg' %}" />
+                                    </a>
+                                    <a href="{% url 'core:dashboard' %}"><span class="lable ml-0">Account</span></a>
+                                    <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                                        <ul>
+                                            <li><a href="{% url 'core:dashboard' %}"><i class="fi fi-rs-user mr-10"></i>My Account</a></li>
+                                            {% if request.user.is_authenticated %}
+                                            <li><a href="{% url 'userauths:sign-out' %}"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a></li>
+                                            {% else %}
+                                            <li><a href="{% url 'userauths:sign-in' %}"><i class="fi fi-rs-sign-in mr-10"></i>Sign In</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom header-bottom-bg-color sticky-bar">
+            <div class="container">
+                <div class="header-wrap header-space-between position-relative">
+                    <div class="logo logo-width-1 d-block d-lg-none">
+                        <a href="{% url 'core:index' %}"><img src="{% static 'assets/imgs/theme/logo-1.png' %}" alt="logo" /></a>
+                    </div>
+                    <div class="header-nav d-none d-lg-flex">
+                        <div class="main-categori-wrap d-none d-lg-block">
+                            <a class="categories-button-active" href="#">
+                                <span class="fi-rs-apps"></span> <span class="et">Browse</span> All Categories
+                                <i class="fi-rs-angle-down"></i>
+                            </a>
+                            <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading">
+                                <div class="d-flex categori-dropdown-inner">
+                                    <ul>
+                                        {% for c in categories %}
+                                        <li>
+                                            <a href="{% url 'core:category-product-list' c.cid %}"> <img src="{{ c.image.url }}" alt="" />{{c.title}}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">Show more...</span></div>
+                            </div>
+                        </div>
+                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a class="active" href="{% url 'core:index' %}">Home</a>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Category <i class="fi-rs-angle-down"></i></a>
+                                        <ul class="sub-menu">
+                                            {% for c in categories %}
+                                            <li><a href="{% url 'core:category-product-list' c.cid %}">{{c.title}}</a></li>
+                                            {% endfor %}
+                                            <hr>
+                                            <li><a href="{% url 'core:category-list' %}">All Categories</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="{% url 'core:product-list'  %}">Shop</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{% url 'core:vendor-list' %}">Vendors </a>
+
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/mechanics">Mechanics </a>
+
+                                    </li>
+                        
+                                    <li>
+                                        <a href="{% url 'core:contact' %}">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                  
+                    <div class="header-action-icon-2 d-block d-lg-none">
+                        <div class="burger-icon burger-icon-white">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                    <div class="header-action-right d-block d-lg-none">
+                        <div class="header-action-2">
+                            <div class="header-action-icon-2">
+                                <a href="{% url 'core:wishlist' %}">
+                                    <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-heart.svg' %}" />
+                                    {% if request.user.is_authenticated %}
+                                    <span class="pro-count blue">{{ wishlist.count }}</span>
+                                    {% else %}
+                                    <span class="pro-count blue">0</span>
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="header-action-icon-2">
+                                <a class="mini-cart-icon" href="{% url 'core:cart' %}">
+                                    <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}" />
+                                    <span class="pro-count white cart-items-count">{{ request.session.cart_data_obj|length }}</span>
+                                </a>
+                                <div class="cart-dropdown-wrap cart-dropdown-hm2">
+
+                                    <div class="shopping-cart-footer">
+                                        <div class="shopping-cart-button">
+                                            <a href="{% url 'core:cart' %}">View cart</a>
+                                            <a href="{% url 'core:checkout' %}">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    setTimeout (() => {
+                        $(".alert").alert("close");
+                    }, 3000)
+                </script>
+            </div>
+        </div>
+    </header>
+    
+
+    {% block content %}
+
+
+
+    {% endblock content %}
+
+
+
+    <footer class="main" style="background-color: #e9ecef; padding: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="widget-about font-md" style="text-align: center;">
+                        <div class="logo mb-30">
+                            <p class="font-lg text-heading" style="margin-bottom: 0;">Amircan Star Company</p>
+                        </div>
+                        <ul class="contact-infor" style="list-style: none; padding: 0; margin: 0 auto; display: inline-block;">
+                            <li style="display: inline-block; margin-right: 20px;"><img src="{% static 'assets/imgs/theme/icons/icon-location.svg' %}" alt="" /><strong>Address: </strong> <span>muscat, Oman</span></li>
+                            <li style="display: inline-block; margin-right: 20px;"><img src="{% static 'assets/imgs/theme/icons/icon-contact.svg' %}" alt="" /><strong>Call Us:</strong><span>(+968) 92175733</span></li>
+                            <li style="display: inline-block; margin-right: 20px;"><img src="{% static 'assets/imgs/theme/icons/icon-email-2.svg' %}" alt="" /><strong>Email:</strong><span>alghawi77667@gmail.com</span></li>
+                            <li style="display: inline-block; margin-right: 20px;"><img src="{% static 'assets/imgs/theme/icons/icon-clock.svg' %}" alt="" /><strong>Hours:</strong><span>8AM - 8PM, Sat - Thu</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    
+
+    <!-- Vendor JS-->
+    <script data-cfasync="false" src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/slick.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.syotimer.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/wow.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/slider-range.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/magnific-popup.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/select2.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/waypoints.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/counterup.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/images-loaded.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/isotope.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/scrollup.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.vticker-min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.theia.sticky.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.elevatezoom.js' %}"></script>
+    <!-- Template  JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/shop.js' %}"></script>
+    <script src="{% static 'assets/js/function.js' %}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "yBeT605-TLvpdHxqR3V1w",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="yBeT605-TLvpdHxqR3V1w"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+</body>
+
+</html>

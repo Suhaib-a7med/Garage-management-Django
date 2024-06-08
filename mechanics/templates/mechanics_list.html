@@ -1,0 +1,63 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<main class="main pages mb-80">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                <span></span> Mechanics List
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content pt-50">
+        <div class="container">
+
+            <div class="row vendor-grid">
+                {% if mechanics_list %}
+                {% for mechanic in mechanics_list %}
+                <div class="col-lg-4 col-md-4 col-12 col-sm-6">
+                    <div class="vendor-wrap style-2 mb-40">
+                        <div class="product-badges product-badges-position product-badges-mrg">
+                            <!-- <span class="hot">Mall</span> -->
+                        </div>
+                        <div class="vendor-img-action-wrap">
+                            <div class="vendor-img">
+                                <a href="/mechanics/{{ mechanic.id }}">
+                                    <img class="default-img" src="{{ mechanic.image.url }}" alt="" />
+                                </a>
+                            </div>
+                            <div class="mt-10">
+                                <span class="font-small total-product">{{ mechanic.proffesion }}</span>
+                            </div>
+                        </div>
+                        <div class="vendor-content-wrap">
+                            <div class="mb-30">
+                                <div class="product-category">
+                                    <span class="text-muted">{{ mechanic.date }}</span>
+                                </div>
+                                <a href="/mechanics/{{ mechanic.id }}">
+                                    <h4 class="mb-5">{{ mechanic.name }}</a></h4>
+                                </a>
+                                <div class="product-rate-cover">
+
+
+                                </div>
+                                <div class="vendor-info d-flex justify-content-between">
+                                     <strong>Mobile:</strong>
+                                     <a href="tel:678676786">{{ mechanic.mobile }}</a>
+                                </div>
+                                <br>
+                                <a class="btn btn-xs" href="/mechanics/{{ mechanic.id }}">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

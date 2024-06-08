@@ -1,0 +1,141 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+{% if mechanic %}
+<main class="main pages mb-80">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                <span></span> <a href="/mechanics" rel="nofollow">Mechanics List</a>
+                <span></span> {{ mechanic.name }}
+            </div>
+        </div>
+    </div>
+    <div class="page-content pt-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <img class="default-img col-12" src="{{ mechanic.image.url }}" alt="" />
+                </div>
+                <div class="col-6">
+                    <h4 class="mb-5">{{ mechanic.name }}</a></h4>
+                    <p class="mb-5">{{ mechanic.proffesion }}</a></p>
+                    <p class="mb-5">Mobile: {{ mechanic.mobile }}</a></p>
+                    <hr>
+                    <h5>Book this mechanic:</h5>
+                    <form method="post" class="col-6 m-3" onsubmit="return validate()">
+
+                        <label for="name">Name:</label>
+                        <input name="name" type="text" id="name" class="form-control" placeholder="Enter your name">
+
+                        <label for="mobile">Mobile:</label>
+                        <input name="mobile" type="text" id="mobile" class="form-control"
+                            placeholder="Enter your mobile number">
+
+                        <label for="email">E-mail:</label>
+                        <input name="email" type="text" id="email" class="form-control" placeholder="Enter your E-mail">
+
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="date">Date</label>
+                                <input type="date" name="date" id="date" min="2024-21-03" class="form-control" />
+                            </div>
+                            <div class="col-6">
+                                <label for="time">Time</label>
+                                <select name="time" id="time" class="form-control">
+                                    <option class="-">Select Time</option>
+                                </select>
+                            </div>
+                        </div>
+                        {% csrf_token %}
+                        {% if login_error %}
+                        <div class="form-text">Sorry something went wrong try again.</div>
+                        {% endif %}
+                        <p id="errorMsg" class="text-danger form-text p-3"></p>
+                        <button type="submit" class="btn btn-sm btn-primary mt-3">Book</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+{% endif %}
+
+<script>
+
+    function validate(e) {
+        $('#errorMsg').text("")
+        if($('#name').val() == '' || $('#mobile').val() == '' || $('#time').val() == '-'){
+            $('#errorMsg').text("Please fill all the required fields...")
+
+            return false;
+        } else {
+            return true
+        }
+    }
+
+    $('#date').change(function () {
+        checkTime()
+    });
+
+    function checkTime() {
+        $('#errorMsg').text("")
+        $("#time").html('<option value="-">Select Time</option>')
+        var today = new Date()
+        var date = $('#date').val();
+        var selectedDate = new Date(date)
+        var timesList = [
+            "08:00",
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "15:00",
+            "16:00",
+            "17:00",
+        ]
+
+        var addTimes = '<option value="-">Select Time</option>'
+        if (today > selectedDate) {
+            $('#errorMsg').text("Please select a valid date...")
+        } else {
+
+            $.ajax({
+                method: "POST",
+                url: "http://127.0.0.1:8000/mechanics/check/",
+                data: { date: date, csrfmiddlewaretoken: "{{ csrf_token }}" },
+                success: function (res) {
+
+                    if (res.success == 'true') {
+                        for (let i = 0; i < timesList.length; i++) {
+                            if (res.reservation) {
+                                if (timesList[i] + ':00' == res.reservation.bookTime) {
+                                    addTimes += '<option value="' + timesList[i] + ':00" disabled>' + timesList[i] + '</option>'
+                                } else {
+                                    addTimes += '<option value="' + timesList[i] + ':00">' + timesList[i] + '</option>'
+                                }
+                            } else {
+                                addTimes += '<option value="' + timesList[i] + ':00">' + timesList[i] + '</option>'
+                            }
+                        }
+                    } else {
+                        for (let i = 0; i < timesList.length; i++) {
+                            addTimes += '<option value="' + timesList[i] + ':00">' + timesList[i] + '</option>'
+                        }
+                    }
+                    $("#time").html(addTimes)
+                },
+                error: function (err) {
+                    for (let i = 0; i < timesList.length; i++) {
+                        addTimes += '<option value="' + timesList[i] + ':00">' + timesList[i] + '</option>'
+                    }
+                    $("#time").html(addTimes)
+                }
+            })
+        }
+    }
+</script>
+{% endblock %}

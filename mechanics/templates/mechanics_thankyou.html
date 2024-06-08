@@ -1,0 +1,28 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<main class="main pages mb-80">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                <span></span> <a href="/mechanics" rel="nofollow">Mechanics List</a>
+                <span></span> Thank You
+            </div>
+        </div>
+    </div>
+    <div class="page-content pt-50">
+        <div class="container">
+            <h3>Thank You</h3>
+            <hr>
+            <p>Thank you for using our services, Your reservation is booked successfully.</p>
+            <br>
+            <p class="mt-5">
+                <a href="/mechanics" rel="nofollow" class="mt-5 pt-5"><i class="fi-rs-users mr-5"></i>Go back to Mechanics List</a>
+            </p>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}
